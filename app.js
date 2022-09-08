@@ -23,12 +23,15 @@ getRandomPhraseAsArray(phrases);
 function addPhraseToDisplay(arr) {
  const idPhrase = document.getElementById('phrase');
  const phraseUl = document.querySelector('ul');
+ li.textContent = ''; 
 
-
-    for (each of li) {
+    for (each of li.textContent) {
         each.style.display = ''; 
         const li = document.createElement('li');
-        li.appendChild(idPhrase.phraseUl)
+        li.appendChild(idPhrase.phraseUl);
  }
-}
+};
+
+const phraseArray = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(phraseArray); 
 
