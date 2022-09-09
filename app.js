@@ -6,8 +6,7 @@ const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
 let missed = '0';
 
-const phrases = [ 't', ' ', 'h', 'h', 'i', 'e', 'r', '',
-'e'];
+const phrases = [ 'hello there', ' ', 'nice to', ' ', 'meet you', ' ', 'I hope', ' ', 'you have', ' ', 'a lovely day'];
 
 startGame.addEventListener('click', (e) => {
  overlay.style.display = 'none';
@@ -16,6 +15,7 @@ startGame.addEventListener('click', (e) => {
 
 function getRandomPhraseAsArray(arr) {
  const randomPhrase = Math.floor(Math.random() * arr.length);
+ // split?
  return arr[randomPhrase];
 }
 getRandomPhraseAsArray(phrases);
@@ -23,11 +23,11 @@ getRandomPhraseAsArray(phrases);
 function addPhraseToDisplay(arr) {
  const idPhrase = document.getElementById('phrase');
  const phraseUl = document.querySelector('ul');
- li.textContent = ''; 
 
-    for (each of li.textContent) {
-        each.style.display = ''; 
+
+    for (/*character*/ in arr) {
         const li = document.createElement('li');
+        li.textContent = /*'character'*/ 
         li.appendChild(idPhrase.phraseUl);
  }
 };
