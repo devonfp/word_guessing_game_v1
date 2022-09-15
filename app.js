@@ -15,8 +15,8 @@ startGame.addEventListener('click', (e) => {
 
 function getRandomPhraseAsArray(arr) {
  const randomPhrase = Math.floor(Math.random() * arr.length);
- // split?
- return arr[randomPhrase];
+const characters =  arr.toString().split('');
+return characters;
 }
 getRandomPhraseAsArray(phrases);
 
@@ -25,13 +25,28 @@ function addPhraseToDisplay(arr) {
  const phraseUl = document.querySelector('ul');
 
 
-    for (/*character*/ in arr) {
+    for (characters in arr) {
         const li = document.createElement('li');
-        li.textContent = /*'character'*/ 
-        li.appendChild(idPhrase.phraseUl);
+        li.textContent = characters;
+        idPhrase.appendChild(li);
+        li.classList.add('letter');
  }
 };
-
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray); 
 
+
+function checkLetter(button) {
+    const letter = document.getElementsByClassName('.letter');
+    const lis = document.querySelector(li);
+    let match = null; 
+    for (letter in lis); {
+       if () {
+
+       } else {
+
+       } 
+
+     
+    }
+}
