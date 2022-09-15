@@ -36,14 +36,17 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray); 
 
 
-function checkLetter('BUTTON') {
+function checkLetter(button) {
     const letter = document.getElementsByClassName('.letter');
     const lis = document.querySelector(li);
     let match = null; 
     for (letter in lis) {
        if (button.textContent === li.textContent ) {
-        
-       } else {
+        li.classList.add('show');
+        button.textContent.match; 
+        return match; 
+       
+    } else {
          
        } 
 
