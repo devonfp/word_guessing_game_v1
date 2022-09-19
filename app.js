@@ -36,20 +36,31 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray); 
 
 
+
 function checkLetter(button) {
     const letter = document.getElementsByClassName('.letter');
-    const lis = document.querySelector(li);
+    const lis = document.querySelectorAll(li);
     let match = null; 
     for (letter in lis) {
        if (button.textContent === li.textContent ) {
         li.classList.add('show');
         button.textContent.match; 
         return match; 
-       
-    } else {
-         
-       } 
+      }
+   }
 
-     
-    }
-}
+   qwerty.addEventListener('click', (e) => {
+      const qwerty = document.getElementById('qwerty');
+       if (e.target.tagName === 'BUTTON') {
+          checkLetter(e.target);
+          console.log(li);
+       }
+      });  
+ }; 
+
+
+
+
+
+
+
