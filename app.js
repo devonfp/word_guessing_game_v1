@@ -38,25 +38,26 @@ addPhraseToDisplay(phraseArray);
 
 
 function checkLetter(button) {
-    const letter = document.getElementsByClassName('.letter');
-    const lis = document.querySelectorAll(li);
+ let letter = document.getElementsByClassName('letter');
+   const lis = document.querySelectorAll('li');
     let match = null; 
     for (letter in lis) {
-       if (button.textContent === li.textContent ) {
-        li.classList.add('show');
+       if (button.textContent === lis.textContent ) {
+        lis.classList.add('show');
         button.textContent.match; 
         return match; 
       }
    }
-
-   qwerty.addEventListener('click', (e) => {
-      const qwerty = document.getElementById('qwerty');
-       if (e.target.tagName === 'BUTTON') {
-          checkLetter(e.target);
-          console.log(li);
-       }
-      });  
  }; 
+
+ qwerty.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+   checkLetter(e.target);
+   qwerty.classList.add('chosen'); 
+    } else {
+
+    }
+ });  
 
 
 
