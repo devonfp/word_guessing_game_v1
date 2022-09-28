@@ -47,15 +47,16 @@ function addPhraseToDisplay(arr) {
 function checkLetter(button) {
  let letters = document.getElementsByClassName('letter');
     let match = null; 
-    for (letters in button) {
+    for (letters in letters) {
        if (button.textContent === letters.textContent ) {
         letters.classList.add('show');
         button.textContent.match; 
         return match;
       } else {
-        const replaceImage = document.getElementsByClassName('tries');
-        replaceImage[0].innerHTML = '<li class="tries"><img src="images/lostHeart.png" height="35px" width="30px"></li>'
-        missed++     
+        const replaceImage = document.querySelectorAll('src');
+        replaceImage[missed] = src='images/lostHeart.png';
+        missed++
+        return match;     
       }
    }   
  }; 
