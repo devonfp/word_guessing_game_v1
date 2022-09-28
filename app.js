@@ -23,7 +23,6 @@ addPhraseToDisplay(characters)
 
 
 function addPhraseToDisplay(arr) {
- //const idPhrase = document.getElementById('phrase');
  const phraseUl = document.querySelector('ul');
 
 
@@ -39,27 +38,27 @@ function addPhraseToDisplay(arr) {
         phraseUl.appendChild(li);
  })
 };
-//const phraseArray = getRandomPhraseAsArray(phrases);
-//addPhraseToDisplay(phraseArray); 
+
 
 
 
 function checkLetter(button) {
  let letters = document.getElementsByClassName('letter');
     let match = null; 
-    for (letters in letters) {
-       if (button.textContent === letters.textContent ) {
+    for (let i = 0; i < letters.length; i++) {
+       if (button.textContent === letters.textContent) {
         letters.classList.add('show');
         button.textContent.match; 
-        return match;
       } else {
         const replaceImage = document.querySelectorAll('src');
         replaceImage[missed] = src='images/lostHeart.png';
         missed++
         return match;     
       }
-   }   
- }; 
+   }
+   console.log(letters);
+   console.log(checkLetter(button));            
+ };
 
  qwerty.addEventListener('click', (e) => {
 
