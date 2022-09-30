@@ -69,6 +69,13 @@ button {
   padding: 10px;
 }
 
+.btn__reset:hover {
+  background-color: #6633ff;
+  transition: all .8s;
+}
+
+
+
 /* Title */
 
 .header {
@@ -95,6 +102,7 @@ button {
 .show {
   color: #000;
   background-color: #76CE82;
+  transition: all .5s;
 }
 
 /* Keyboard */
@@ -117,7 +125,10 @@ button {
   background: #FFFFFF;
   border-radius: 5px;
   font-size: var(--font-size-medium);
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
 }
+
 
 /* Overlay */
 

@@ -3,7 +3,8 @@ const buttons = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
-let missed = '0';
+const hearts = document.querySelectorAll('.tries img');
+let missed = 0;
 
 const phrases = [ 'Hello', 
                   'have a lovely day'];
@@ -44,16 +45,12 @@ function checkLetter(button) {
  let letters = document.getElementsByClassName('letter');
     let match = null; 
     for (let i = 0; i < letters.length; i++) {
-       if (button.textContent === letters.textContent) {
-        letters.classList.add('show');
-        button.textContent.match; 
-      } else {
-        const replaceImage = document.querySelectorAll('src');
-        replaceImage[missed] ='images/lostHeart.png';
-        missed++;
-        return match;     
-      }
-   }      
+       if (button.textContent === letters[i].textContent.toLowerCase()) {
+        letters[i].classList.add('show');
+        match = button.textContent;
+      } 
+   }
+   return match;      
  }
 
 
@@ -63,31 +60,46 @@ function checkLetter(button) {
     const btn = e.target;
 
     if (btn.tagName === 'BUTTON') {
-   checkLetter(btn);
+   const match = checkLetter(btn);
    btn.classList.add('chosen'); 
    btn.disabled = true;
+   if (!match) {
+    hearts[missed].src = 'images/lostHeart.png';
+    missed++
+   }
+   checkWin();
     }
  }); 
 
 
 // Checks if the user won or lost
  function checkWin() {
-   const letter = document.querySelectorAll('.letter li');
-   const show = document.querySelectorAll('.show li');
-   const headline = document.getElementsByClassName("header");
+   const letter = document.querySelectorAll('.letter');
+   const show = document.querySelectorAll('.show');
+   const headline = document.querySelector(".title");
 
     if (show.length === letter.length) {
        overlay.classList.add('win');
        headline.textContent = 'Congrats, you win!';
+       startGame.textContent = 'Restart'
+       startGame.addEventListener('click', (e) => {
+         document.body.innerHTML = "";
+         window.location.reload()
+       })
        overlay.style.display = 'flex';
     }
 
    if (missed > 4) {
       overlay.classList.add('lose');
       headline.textContent = 'Sorry, you lose.';
+      startGame.textContent = 'Restart'
+       startGame.addEventListener('click', (e) => {
+         document.body.innerHTML = "";
+         window.location.reload()
+       })
       overlay.style.display = 'flex';
    }
-} checkWin();
+}
 
 
 
