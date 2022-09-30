@@ -1,12 +1,10 @@
-
-
-const qwerty = document.getElementById('qwerty');
+const buttons = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
 let missed = '0';
 
-const phrases = [ 'hello there', 
+const phrases = [ 'Hello!', 
                   'have a lovely day'];
 
 startGame.addEventListener('click', (e) => {
@@ -18,14 +16,11 @@ startGame.addEventListener('click', (e) => {
 function getRandomPhraseAsArray(arr) {
 const randomPhrase = Math.floor(Math.random() * arr.length);
 const characters =  arr[randomPhrase].split('');
-addPhraseToDisplay(characters)
+addPhraseToDisplay(characters);
 }
 
 
 function addPhraseToDisplay(arr) {
- const phraseUl = document.querySelector('ul');
-
-
     arr.forEach (character => {
         const li = document.createElement('li');
         li.textContent = character;
@@ -35,9 +30,9 @@ function addPhraseToDisplay(arr) {
     } else {
       li.classList.add('letter');
     }
-        phraseUl.appendChild(li);
- })
-};
+        phrase.appendChild(li);
+ });
+}
 
 
 
@@ -51,16 +46,16 @@ function checkLetter(button) {
         button.textContent.match; 
       } else {
         const replaceImage = document.querySelectorAll('src');
-        replaceImage[missed] = src='images/lostHeart.png';
-        missed++
+        replaceImage[missed] ='images/lostHeart.png';
+        missed++;
         return match;     
       }
    }
    console.log(letters);
    console.log(checkLetter(button));            
- };
+ }
 
- qwerty.addEventListener('click', (e) => {
+ buttons.addEventListener('click', (e) => {
 
     const btn = e.target;
 
@@ -76,7 +71,7 @@ function checkLetter(button) {
  function checkWin() {
    const letter = document.querySelectorAll('.letter li');
    const show = document.querySelectorAll('.show li');
-   const headline = document.getElementsByClassName("header")
+   const headline = document.getElementsByClassName("header");
 
     if (show.length === letter.length) {
        overlay.classList.add('win');
@@ -89,8 +84,7 @@ function checkLetter(button) {
       headline.textContent = 'Sorry, you lose.';
       overlay.style.display = 'flex';
    }
-}
-
+} checkWin();
 
 
 
