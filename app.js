@@ -1,3 +1,4 @@
+// Global-scope variables
 const buttons = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
@@ -7,12 +8,13 @@ let missed = '0';
 const phrases = [ 'Hello', 
                   'have a lovely day'];
 
+ // Opens the game after click "Start Game"                 
 startGame.addEventListener('click', (e) => {
    getRandomPhraseAsArray(phrases); 
    overlay.style.display = 'none';
 });
   
-
+// Randomly chooses a phrase from the phrases array
 function getRandomPhraseAsArray(arr) {
 const randomPhrase = Math.floor(Math.random() * arr.length);
 const characters =  arr[randomPhrase].split('');
@@ -20,6 +22,7 @@ addPhraseToDisplay(characters);
 }
 
 
+// After randomly choosing, the random phrase gets appended to the DOM
 function addPhraseToDisplay(arr) {
     arr.forEach (character => {
         const li = document.createElement('li');
@@ -36,7 +39,7 @@ function addPhraseToDisplay(arr) {
 
 
 
-
+// How the game responds based on what letter the user has selected
 function checkLetter(button) {
  let letters = document.getElementsByClassName('letter');
     let match = null; 
@@ -50,11 +53,11 @@ function checkLetter(button) {
         missed++;
         return match;     
       }
-   }
-   console.log(letters);
-   console.log(checkLetter(button));            
+   }      
  }
 
+
+ //Listens for a user to click a button on the on-screen keyboard
  buttons.addEventListener('click', (e) => {
 
     const btn = e.target;
@@ -67,7 +70,7 @@ function checkLetter(button) {
  }); 
 
 
-
+// Checks if the user won or lost
  function checkWin() {
    const letter = document.querySelectorAll('.letter li');
    const show = document.querySelectorAll('.show li');
