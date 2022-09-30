@@ -4,7 +4,7 @@ const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
 let missed = '0';
 
-const phrases = [ 'Hello!', 
+const phrases = [ 'Hello', 
                   'have a lovely day'];
 
 startGame.addEventListener('click', (e) => {
