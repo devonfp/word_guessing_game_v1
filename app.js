@@ -8,7 +8,7 @@ let missed = '0';
 const phrases = [ 'Hello', 
                   'have a lovely day'];
 
- // Opens the game after click "Start Game"                 
+ // Opens the game after clicking "Start Game"                 
 startGame.addEventListener('click', (e) => {
    getRandomPhraseAsArray(phrases); 
    overlay.style.display = 'none';
