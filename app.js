@@ -1,13 +1,13 @@
 // Global-scope variables
 const buttons = document.getElementById('qwerty');
-const phrase = document.getElementById('phrase');
+const phrase = document.querySelector('#phrase ul');
 const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
 const hearts = document.querySelectorAll('.tries img');
 let missed = 0;
 
-const phrases = [ 'Hello', 
-                  'have a lovely day'];
+const phrases = [ 'Above and Beyond', 
+                  'Helping Hand', 'A perfect storm', 'A piece of cake', 'Good Vibes'];
 
  // Opens the game after clicking "Start Game"                 
 startGame.addEventListener('click', (e) => {
@@ -72,6 +72,9 @@ function checkLetter(button) {
  }); 
 
 
+
+
+
 // Checks if the user won or lost
  function checkWin() {
    const letter = document.querySelectorAll('.letter');
@@ -81,7 +84,7 @@ function checkLetter(button) {
     if (show.length === letter.length) {
        overlay.classList.add('win');
        headline.textContent = 'Congrats, you win!';
-       startGame.textContent = 'Restart'
+       startGame.textContent = 'Back To Start'
        startGame.addEventListener('click', (e) => {
          document.body.innerHTML = "";
          window.location.reload()
@@ -92,10 +95,11 @@ function checkLetter(button) {
    if (missed > 4) {
       overlay.classList.add('lose');
       headline.textContent = 'Sorry, you lose.';
-      startGame.textContent = 'Restart'
+      startGame.textContent = 'Back To Start';
        startGame.addEventListener('click', (e) => {
          document.body.innerHTML = "";
          window.location.reload()
+         overlay.style.display = 'none';
        })
       overlay.style.display = 'flex';
    }
